@@ -1,0 +1,45 @@
+<div class="col-md-12">
+
+	<!-- PAGE TITLE -->
+	<div class="page-header">
+		<h2>SailsJS + angular sample app</h2>
+		<h4>Commenting System</h4>
+	</div>
+
+	<!-- NEW COMMENT FORM -->
+	<form ng-submit="submitComment()"> <!-- ng-submit will disable the default form action and use our function -->
+
+		<!-- AUTHOR -->
+		<div class="form-group">
+			<input type="text" class="form-control input-lg" name="author" ng-model="commentData.author" placeholder="Name">
+		</div>
+
+		<!-- COMMENT TEXT -->
+		<div class="form-group">
+			<input type="text" class="form-control input-lg" name="comment" ng-model="commentData.text" placeholder="Say what you have to say">
+		</div>
+		
+		<!-- SUBMIT BUTTON -->
+		<div class="form-group text-right">	
+			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+		</div>
+	</form>
+<hr />
+	<pre>
+	{{ commentData }}
+	</pre>
+
+	<!-- LOADING ICON -->
+	<!-- show loading icon if the loading variable is set to true -->
+	<p class="text-center" ng-show="loading" style="color:#2299dd"><i class="fa fa-circle-o-notch fa-spin"></i></p>
+
+	<!-- THE COMMENTS -->
+	<!-- hide these comments if the loading variable is true -->
+	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
+		<h3>Comment by {{ comment.author }}</h3>
+		<p>{{ comment.text }}</p>
+
+		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">Delete</a></p>
+	</div>
+
+</div>
