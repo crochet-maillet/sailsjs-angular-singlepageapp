@@ -20,7 +20,11 @@ module.exports = {
         unique: true
     },
     text: 'string',
-    author: 'string'    
+    author: {
+            type: 'string',
+            required: 'true'
+        },
+            date: 'DATE'
   }
 
 };

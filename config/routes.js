@@ -37,8 +37,8 @@ module.exports.routes = {
   },
   'get /comment/:id?': 'CommentsController.find',
   'post /comment': 'CommentsController.create',
-  'delete /comment/:id?': 'CommentsController.destroy'
-
+  'delete /comment/:id?': 'CommentsController.destroy',
+  'get /date': 'CommentsController.date'
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?

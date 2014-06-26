@@ -75,7 +75,13 @@ module.exports = {
     }
   },
 
-
+  date: function(req,res){
+        Comments.find({createdAt: {'>': new Date('1/1/2014'), '<': new Date('6/26/2014')}},function(err,comments){
+            if(comments === undefined) return res.notFound();
+            res.json(comments);
+        });
+        
+  },
 
 
   /**
